@@ -3,7 +3,7 @@ import {CardStyled, CardMiddleLine, LogoImg, AvatarWrapper, Avatar, UserInf, Twe
 import Logo from '../../../images/Logo.png'
 import Button from '../Button/Button'
 
-export default function Card() {
+export default function Card({user}) {
   return (
     <CardStyled>
         <LogoImg src={Logo} />
@@ -13,10 +13,10 @@ export default function Card() {
         </AvatarWrapper>
         <UserInf>
             <Tweets>
-                4444
+                {user.tweets}
             </Tweets>
             <Followers>
-                222222
+              {user.followers}
             </Followers>
         </UserInf>
         <Button>FOLLOW</Button>
