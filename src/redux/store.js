@@ -10,8 +10,9 @@ import {
     PURGE,
     REGISTER,
 } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import storage from 'redux-persist/lib/storage'
 import usersReduser from './userSlice'
+import filterReducer from './filterSlice'
 
 const usersPersistConfig = {
     key: 'token',
@@ -25,6 +26,7 @@ const persistedUsersReducer = persistReducer(usersPersistConfig, usersReduser);
 const store = configureStore({
     reducer: {
         users: persistedUsersReducer,
+        filter: filterReducer,
     },
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({

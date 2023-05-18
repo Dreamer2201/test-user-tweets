@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from 'components/share/Card/Card'
 import {CardsList} from './CardList.styled'
+import { Grid } from '@mui/material';
 
 export default function CardList({users}) {
 
@@ -9,6 +10,12 @@ export default function CardList({users}) {
    });
    
    return (
-           <CardsList> {elements}</CardsList>
+            <Grid 
+            container 
+            spacing={2}
+            rowSpacing={1} columnSpacing={{ xs: 1, sm: 3, md: 3 }}
+            >
+                {elements}
+            </Grid>
    )
 }
