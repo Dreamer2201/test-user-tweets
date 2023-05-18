@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getAllUsers } from "./api";
+import { getAllUsers, changeUserFollowers } from "./api";
 
 const initialState = {
     users: [],
@@ -18,6 +18,13 @@ const userSlice = createSlice({
         })
         .addCase(getAllUsers.fulfilled, (state, action) => {
             state.loading = false
+            const newArray = action.payload.map(user => {
+                return {
+                    ...user,
+                    isActiveFollowBtn: false
+                }
+            })
+            console.log(newArray)
             state.users = [...action.payload]
             return state
         })
@@ -27,8 +34,27 @@ const userSlice = createSlice({
             state.error = action.payload
             return state
         })
+        .addCase(changeUserFollowers.pending, (state) => {
+            state.loading = true
+            return state
+        })
+        .addCase(changeUserFollowers.fulfilled, (state, action) => {
+            state.loading = false
+            console.log(action.payload)
+            const toggleUser = state.users.find(user => user.id === action.payload.id)
+            
+            const idx = state.users.indexOf(toggleUser);
+            console.log(idx)
+            state.users[idx] = action.payload
+            return state
+        })
+        .addCase(changeUserFollowers.rejected, (state, action) => {
+            console.log(action.payload)
+            state.loading = false
+            state.error = action.payload
+            return state
+        })
     }
 })
 
-export const {getUsers} = userSlice.actions;
 export default userSlice.reducer;
