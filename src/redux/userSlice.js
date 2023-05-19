@@ -24,12 +24,10 @@ const userSlice = createSlice({
                     isActiveFollowBtn: false
                 }
             })
-            console.log(newArray)
-            state.users = [...action.payload]
+            state.users = [...newArray]
             return state
         })
         .addCase(getAllUsers.rejected, (state, action) => {
-            console.log(action.payload)
             state.loading = false
             state.error = action.payload
             return state
@@ -40,21 +38,17 @@ const userSlice = createSlice({
         })
         .addCase(changeUserFollowers.fulfilled, (state, action) => {
             state.loading = false
-            console.log(action.payload)
             const toggleUser = state.users.find(user => user.id === action.payload.id)
-            
             const idx = state.users.indexOf(toggleUser);
-            console.log(idx)
             state.users[idx] = action.payload
             return state
         })
         .addCase(changeUserFollowers.rejected, (state, action) => {
-            console.log(action.payload)
             state.loading = false
             state.error = action.payload
             return state
         })
     }
 })
-
+export const {changeActiveBtnFollowers} = userSlice.actions
 export default userSlice.reducer;

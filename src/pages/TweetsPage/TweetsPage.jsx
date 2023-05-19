@@ -6,8 +6,8 @@ import { getAllUsers } from 'redux/api';
 import { changeFilter } from 'redux/filterSlice';
 import filterUsers from 'redux/users-selectors';
 import CardList from 'components/CardsList/CardList';
-import {ButtonLoadMore} from './TweetsPage.styled'
-import { Container, TextField } from '@mui/material';
+import {ButtonLoadMore, BtnGoBack} from './TweetsPage.styled'
+import { Container } from '@mui/material';
 import {FormControl, InputLabel, Select, MenuItem} from "@mui/material";
 
 
@@ -18,9 +18,6 @@ export default function TweetsPage() {
   // const isError = useSelector((state) => state.error);
   const [limit, setLimit] = useState(3)
   const [filter, setFilter] = useState('');
-  // const [filteredUsers, setFilteredUsers] = useState([...users])
-
-  let filteredUsers = [...users]
 
   const filters = ["Show all", "Follow", "Followings"]
 
@@ -40,30 +37,30 @@ export default function TweetsPage() {
   }
 
   const handleChangeFilter = (e) => {
-    console.log(e.target.value)
     setFilter(e.target.value)
     dispatch(changeFilter(e.target.value))
   }
 
-  console.log(filteredUsers)
   const usersLimited = users.slice(0, limit)
 
   return (
-    <Container
-    sx={{ mt: '5px'}}
+    <Container 
+      sx={{ mt: '5px'}}
     >
-        <button type='button' onClick={() => navigate('/')}>Go back HOME</button>
+        <BtnGoBack type='button' onClick={() => navigate('/')}>GO BACK</BtnGoBack>
         <FormControl variant="standard"
             sx={{ 
-            marginTop: 5, 
+            marginTop: 1,
+            mb: 5, 
             width: 100 }}>
-              <InputLabel shrink>Show All</InputLabel>
+              <InputLabel id="demo-simple-select-autowidth-label">Select filter</InputLabel>
         <Select
         sx={{
           width: 250,
           height: 50,
         }}
-        label="Show All"
+        labelId="demo-simple-select-autowidth-label"
+          id="demo-simple-select-autowidth"
         value={filter}
         onChange={handleChangeFilter}
       >

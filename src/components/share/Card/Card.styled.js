@@ -4,7 +4,7 @@ import BGImage from '../../../images/bgImgUpCard.png'
 
 export const CardStyled = styled.div`
     position: relative;
-    width: 360px;
+    width: 330px;
     height: 460px;
 
     display: flex;
@@ -26,7 +26,7 @@ export const CardMiddleLine = styled.div`
     top: 214px;
     left: 0px;
 
-    width: 360px;
+    width: 330px;
     height: 8px;
 
     /* background-color: #EBD8FF; */

@@ -1,6 +1,5 @@
 import React from 'react'
 import Card from 'components/share/Card/Card'
-import {CardsList} from './CardList.styled'
 import { Grid } from '@mui/material';
 
 export default function CardList({users}) {

@@ -1,16 +1,16 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import {CardStyled, CardMiddleLine, LogoImg, AvatarWrapper, AvatarWrapperIns, Avatar, UserInf, Tweets, Followers, ButtonStyled, ButtonStyledActive } from './Card.styled'
 import Logo from '../../../images/Logo.png'
 import { changeUserFollowers } from 'redux/api'
+import {changeActiveBtnFollowers} from 'redux/userSlice'
+import { changeFilter } from 'redux/filterSlice'
 import { Grid } from '@mui/material'
 
 export default function Card({user}) {
   const dispatch = useDispatch();
 
   const toggleBtnFollowers = (id) => {
-    console.log('click')
-    console.log(id)
     dispatch(changeUserFollowers(id))
   }
 

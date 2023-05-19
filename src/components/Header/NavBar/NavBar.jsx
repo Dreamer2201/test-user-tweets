@@ -1,19 +1,21 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import {AppBar, Toolbar, Typography } from '@mui/material';
+import {AppBar, Toolbar, Typography, IconButton } from '@mui/material';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
+import {NavBarLink} from './NavBar.styled'
+
 
 export default function NavBar() {
   return (
     <AppBar position="static">
       <Toolbar>
-          <Typography
-            variant='h3'
-            component='span'
-          >Tweets
-          </Typography>
+          <IconButton edge="start">
+            <HowToRegIcon />
+          </IconButton>
+          <NavBarLink to='/'>Home</NavBarLink>
+        <NavBarLink to='/tweets'>Tweets</NavBarLink>
       </Toolbar>
-        <NavLink to='/'>Home</NavLink>
-        <NavLink to='/tweets'>Tweets</NavLink>
+        
+        
     </AppBar>
   )
 }
