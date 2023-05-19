@@ -1,6 +1,5 @@
 import React from 'react'
-import {AppBar, Toolbar, Typography, IconButton } from '@mui/material';
-import HowToRegIcon from '@mui/icons-material/HowToReg';
+import {AppBar, Toolbar } from '@mui/material';
 import {NavBarLink} from '../Header/NavBar/NavBar.styled'
 import { FooterStyled } from './Footer.styled';
 
