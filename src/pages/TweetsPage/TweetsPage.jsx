@@ -9,13 +9,15 @@ import CardList from 'components/CardsList/CardList';
 import {ButtonLoadMore, BtnGoBack} from './TweetsPage.styled'
 import { Container } from '@mui/material';
 import {FormControl, InputLabel, Select, MenuItem} from "@mui/material";
+import CircularIndeterminate from 'components/Loader/Loader';
 
 
 export default function TweetsPage() {
   const navigate= useNavigate()
   const users = useSelector(filterUsers)
-  // const isLoading = useSelector((state) => state.loading);
-  // const isError = useSelector((state) => state.error);
+  const isLoading = useSelector((state) => state.loading);
+  const isError = useSelector((state) => state.error);
+
   const [limit, setLimit] = useState(3)
   const [filter, setFilter] = useState('');
 
@@ -71,6 +73,8 @@ export default function TweetsPage() {
       </FormControl>
         <CardList users={usersLimited} />
         <ButtonLoadMore type='button' onClick={loadMore}>Load more</ButtonLoadMore>
+        {isLoading && <CircularIndeterminate />}
+        {isError && <p>Sorry, something is wrong. Please, try again later.</p>}
     </Container>
   )
 }

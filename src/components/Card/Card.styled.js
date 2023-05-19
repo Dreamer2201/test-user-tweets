@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import BGImage from '../../../images/bgImgUpCard.png'
+import BGImage from '../../images/bgImgUpCard.png'
 
 
 export const CardStyled = styled.div`
@@ -17,7 +17,6 @@ export const CardStyled = styled.div`
     background-color: #5736A3;
 
     background-image: url(${BGImage});
-    /* background-size: 25px 50px; */
     background-repeat: no-repeat;
     background-position: 36px 28px;
 `
@@ -29,7 +28,8 @@ export const CardMiddleLine = styled.div`
     width: 330px;
     height: 8px;
 
-    /* background-color: #EBD8FF; */
+    background-color: #EBD8FF;
+
     box-shadow: inset 0px 3.44px 2.58px #FBF8FF,
     inset 0px 3.44px  3.44px rgba(0, 0, 0, 0.06),
     inset 0px -1.72px 3.44px #AE7BE3;
@@ -40,19 +40,20 @@ export const LogoImg = styled.img`
     left: 20px;
 `
 export const AvatarWrapper = styled.div`
+    box-sizing: border-box;
     position: absolute;
     top: 214px;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    
-    outline: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;  
+    background-color: #EBD8FF;
 
     box-shadow: inset 0px 4.39px 3.29px #FBF8FF,
     inset 0px 4.39px  4.39px rgba(0, 0, 0, 0.06),
@@ -63,30 +64,21 @@ export const AvatarWrapperIns = styled.div`
     height: 64px;
     border-radius: 50%;
     
-    outline: 1px solid green;
-
     display: flex;
     justify-content: center;
     align-items: center;
 
     overflow: hidden;
-    /* box-shadow: inset 0px 3.44px 2.58px #FBF8FF,
-    inset 0px 3.44px  3.44px rgba(0, 0, 0, 0.06),
-    inset 0px -1.72px 3.44px #AE7BE3; */
+    box-shadow: 0px 4.39px 3.29px #FBF8FF,
+    0px 4.39px  4.39px rgba(0, 0, 0, 0.06),
+    0px -2.2px 3.39px #AE7BE3;
 `
 
 export const Avatar = styled.img`
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-
-    
-    /* box-shadow: 0px 3.44px 2.58px #FBF8FF,
-    0px 3.44px  3.44px rgba(0, 0, 0, 0.06),
-    0px -1.72px 3.44px #AE7BE3; */
-
-    
+    object-fit: cover; 
 `
 export const UserInf = styled.div`
     display: flex;

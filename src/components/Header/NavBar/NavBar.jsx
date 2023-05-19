@@ -11,14 +11,11 @@ export default function NavBar() {
           <IconButton edge="start">
             <Link to='/'>
             <img src={imgLogo} alt='logo' />  
-            </Link>
-                    
+            </Link>   
           </IconButton>
           <NavBarLink to='/'>Home</NavBarLink>
         <NavBarLink to='/tweets'>Tweets</NavBarLink>
       </Toolbar>
-        
-        
     </AppBar>
   )
 }

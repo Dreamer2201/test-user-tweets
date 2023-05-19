@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from 'components/share/Card/Card'
+import Card from 'components/Card/Card'
 import { Grid } from '@mui/material';
 
 export default function CardList({users}) {

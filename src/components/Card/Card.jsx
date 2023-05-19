@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import {CardStyled, CardMiddleLine, LogoImg, AvatarWrapper, AvatarWrapperIns, Avatar, UserInf, Tweets, Followers, ButtonStyled, ButtonStyledActive } from './Card.styled'
-import Logo from '../../../images/Logo.png'
+import Logo from '../../images/Logo.png'
 import { changeUserFollowers } from 'redux/api'
 import { Grid } from '@mui/material'
 

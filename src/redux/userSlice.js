@@ -50,5 +50,5 @@ const userSlice = createSlice({
         })
     }
 })
-export const {changeActiveBtnFollowers} = userSlice.actions
+
 export default userSlice.reducer;
