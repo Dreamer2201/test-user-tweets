@@ -1,5 +1,5 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 
 export const FooterStyled = styled.footer`
-    margin-top: 10px;
-`
+	margin-top: 10px;
+`;
