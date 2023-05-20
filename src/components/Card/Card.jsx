@@ -39,8 +39,8 @@ export default function Card({ user }) {
 					</AvatarWrapperIns>
 				</AvatarWrapper>
 				<UserInf>
-					<Tweets>{formatData(user.tweets)}</Tweets>
-					<Followers>{formatData(user.followers)}</Followers>
+					<Tweets>{formatData(user.tweets)} TWEETS </Tweets>
+					<Followers>{formatData(user.followers)} FOLLOWERS </Followers>
 				</UserInf>
 				{user.isActiveBtn ? (
 					<ButtonStyledActive
