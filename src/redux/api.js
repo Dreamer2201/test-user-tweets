@@ -19,15 +19,14 @@ export const changeUserFollowers = createAsyncThunk(
 	'users/toggleFollowers',
 	async (id, { rejectWithValue, getState }) => {
 		const user = getState().users.users.find(user => user.id === id);
-		let amountFollowers = user.followers;
-		user.isActiveBtn ? (amountFollowers -= 1) : (amountFollowers += 1);
-		const newUser = {
-			...user,
-			followers: amountFollowers,
-			isActiveBtn: !user.isActiveBtn,
-		};
+		const updatedUser = {
+			name: user.name,
+			tweets: user.tweets,
+			followers: user.followers,
+			avatar: user.avatar
+		}
 		try {
-			const { data } = await axios.put(`${baseURL}/users/${id}`, newUser);
+			const { data } = await axios.put(`${baseURL}/users/${id}`, updatedUser);
 			return data;
 		} catch (error) {
 			return rejectWithValue(error);

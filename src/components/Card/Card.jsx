@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { changeUsers } from 'redux/userSlice';
 import {
 	CardStyled,
 	CardMiddleLine,
@@ -20,7 +21,8 @@ import { Grid } from '@mui/material';
 export default function Card({ user }) {
 	const dispatch = useDispatch();
 
-	const toggleBtnFollowers = id => {
+	const toggleBtnFollowers = async(id) => {
+		await dispatch(changeUsers(id));
 		dispatch(changeUserFollowers(id));
 	};
 

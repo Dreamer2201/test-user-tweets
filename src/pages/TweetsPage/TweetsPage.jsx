@@ -25,12 +25,12 @@ export default function TweetsPage() {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(getAllUsers());
-	}, [dispatch]);
-
-	useEffect(() => {
-		dispatch(getAllUsers());
-	}, [dispatch]);
+		if(users.length) {
+			return
+		} else {
+			dispatch(getAllUsers());
+		}
+	}, [dispatch, users.length]);
 
 	const loadMore = () => {
 		setLimit(prevLimit => prevLimit + 3);
